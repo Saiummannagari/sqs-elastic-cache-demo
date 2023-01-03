@@ -1,7 +1,20 @@
 cloud:
   aws:
     region:
-      static: us-east-1
+      static: {{region}}
     stack:
       auto: false
+    credentials:
+      accessKey: {{access key}}
+      secretKey: {{secret key}}
+spring:
+  cache:
+    type: redis
+  redis:
+    host: {{primary endpoint/configuration endpoint}}
+    port: 6379
 
+#  cloud.aws.credentials.accessKey=<access-key>
+#  cloud.aws.credentials.secretKey=<secret-key>
+#  cloud.aws.credentials.instanceProfile=true
+#  cloud.aws.credentials.useDefaultAwsCredentialsChain=true
